@@ -7,5 +7,13 @@
     Things
   </h1>
   <p>Some stuff about things goes here.</p>
+{% block content %}
+  <h2>Home</h2>
+  <form method='post' action='{% url 'home' %}'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Submit</button>
+  </form>
+{% endblock %}
 </body>
 </html>
